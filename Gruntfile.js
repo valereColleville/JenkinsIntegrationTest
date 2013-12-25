@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       all: ['src/*.js'],
       options: {
 			devel:true,
-			reporter: require("jshint-junit-reporter"),
+			reporter: 'jslint',
     		reporterOutput: "junit-output.xml"
 		},
     },
