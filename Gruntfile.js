@@ -26,32 +26,6 @@ module.exports = function(grunt) {
         src: 'dist/<%= pkg.name %>.js',
         dest: 'dist/<%= pkg.name %>.min.js'
       }
-    },
-    testem: {
-      options: {
-        launch_in_ci: ['PhantomJS']
-      },
-      'test/testem.tap': ['test/*.html']
-    },
-    "qunit-cov": {
-      test: {
-        minimum: 0.9,
-        srcDir: 'src',
-        depDirs: ['test'],
-        outDir: 'dist/cov',
-        testFiles: ['test/*.html']
-      }
-    },
-    plato: {
-      options: {
-        title: 'Awesome Project',
-        jshint: grunt.file.readJSON('.jshintrc')
-      },
-      metrics: {
-        files: {
-          'dist/metrics': [ 'src/*.js' ]
-        }
-      }
     }
   });
 
@@ -59,12 +33,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-testem');
-  grunt.loadNpmTasks('grunt-qunit-cov');
-  grunt.loadNpmTasks('grunt-plato');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov']);
-  grunt.registerTask('jenkins', ['jshint', 'testem', 'clean', 'qunit-cov', 'plato', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'jasmine', 'clean', 'qunit-cov']);
+  grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify']);
 
 };

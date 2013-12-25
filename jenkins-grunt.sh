@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin/node:/usr/bin/npm:$PATH;
+export PATH=/usr/local/bin:/usr/bin/node:/usr/bin/npm:./node_modules/phantomjs/lib/phantom/bin/phantomjs:$PATH;
 
 npm --version
 node --version
