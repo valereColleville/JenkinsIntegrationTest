@@ -1,8 +1,8 @@
 export PATH=/usr/local/bin:/usr/bin/node:/usr/bin/npm:$PATH;
 
-which node
-which npm
+npm --version
+node --version
 
 npm install grunt-cli
 npm install 
-grunt jenkins --no-color
+./node_modules/grunt-cli/bin/grunt jenkins --no-color
