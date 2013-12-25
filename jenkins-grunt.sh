@@ -1,5 +1,8 @@
-export PATH=/usr/local/bin:/path/to/node:/path/to/node_bin:/path/to/phantomjs:/path/to/jscoverage:$PATH;
+export PATH=/usr/local/bin:/usr/bin/node:/usr/bin/npm:$PATH;
+
+which node
+which npm
 
 npm install grunt-cli
-npm install
+npm install 
 grunt jenkins --no-color
