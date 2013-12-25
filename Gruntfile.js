@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: ['dist/*.js', 'test/testem.tap'],
+    clean: ['dist/*.js'],
     jshint: {
       all: ['src/*.js'],
       options: grunt.file.readJSON('.jshintrc')
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'jasmine', 'clean', 'qunit-cov']);
+  grunt.registerTask('default', ['jshint', 'clean']);
   grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify']);
 
 };
