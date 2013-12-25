@@ -6,7 +6,11 @@ module.exports = function(grunt) {
     clean: ['dist/*.js'],
     jshint: {
       all: ['src/*.js'],
-      options: grunt.file.readJSON('.jshintrc')
+      options: {
+			devel:true,
+			reporter: require("jshint-junit-reporter"),
+    		reporterOutput: "junit-output.xml"
+		},
     },
     concat: {
       build: {

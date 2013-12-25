@@ -16,9 +16,8 @@
   "devDependencies": {
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-concat": "~0.2.0",
-    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-jshint": "~0.5.3",
     "grunt-contrib-uglify": "~0.2.0",
-    "grunt-qunit-cov": "~0.3.2",
-    "grunt-plato": "~0.2.0"
+	 "jshint-junit-reporter":"~0.0.6"
   }
 }
