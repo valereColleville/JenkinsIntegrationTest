@@ -1,5 +1,5 @@
 {
-  "name": "TestIntegrationJenkins",
+  "name": "testintegrationjenkins",
   "version": "0.0.0",
   "description": "Sample project of Grunt on Jenkins",
   "main": "main.js",
