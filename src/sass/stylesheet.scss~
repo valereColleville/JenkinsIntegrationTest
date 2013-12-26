@@ -1,0 +1,23 @@
+$dark-accent:   #333;
+$light-accent:  #eee;
+
+@mixin default_fonts {
+    font-family:    helvetica;
+    font-size:      10pt;
+    color:          $dark-accent;
+}
+
+#info_box {
+    width:      400px;
+    height:     300px;
+    padding:    10pt;
+    border:     1px solid $dark-accent;
+    background: $light-accent;
+    @include    default_fonts;
+
+    input[type=button] {
+        color:       #fff;
+        font-weight: bold;
+        border:      none;
+    }
+}

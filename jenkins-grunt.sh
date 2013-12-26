@@ -6,4 +6,4 @@ node --version
 npm install grunt-cli
 npm install 
 ./node_modules/grunt-cli/bin/grunt jenkins --no-color
-sed -E 's?<file name="(.*)\?">?<file name="'`pwd`'/\1">?' junit-output.xml > jshint-proper.xml
+sed -E 's?<file name="(.*)\?">?<file name="'`pwd`'/\1">?' jshint-output.xml > jshint-proper.xml
