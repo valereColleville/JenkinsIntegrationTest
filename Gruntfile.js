@@ -36,6 +36,14 @@ module.exports = function(grunt) {
       }
     }
 	},
+	copy: {
+	  main: {
+		 files: [
+		   // includes files within path
+		   {expand: true,flatten: true, src: ['src/html/*.html'], dest: 'dist/html', filter: 'isFile'},
+		 ]
+	  }
+	}
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -43,9 +51,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint', 'clean']);
-  grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify', 'compass']);
+  grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify', 'compass', 'copy']);
 
 };
