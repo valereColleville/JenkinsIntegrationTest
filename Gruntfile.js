@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 	 variables:{
 		dist : 'dist',
 		src : 'src',
-		test : 'test'
+		test : 'test',
+		report : 'report'
 	 },
     pkg: grunt.file.readJSON('package.json'),
     clean: ['<%= variables.dist %>/*'],
@@ -14,7 +15,7 @@ module.exports = function(grunt) {
       options: {
 			devel:true,
 			reporter: 'jslint',
-    		reporterOutput: "jshint-output.xml"
+    		reporterOutput: "<%= variables.report %>/jshint-output.xml"
 		},
     },
     concat: {

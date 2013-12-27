@@ -8,7 +8,7 @@ npm install grunt-cli
 npm install 
 ./node_modules/protractor/bin/webdriver-manager update --out_dir selenium
 ./node_modules/grunt-cli/bin/grunt jenkins --no-color
-sed -E 's?<file name="(.*)\?">?<file name="'`pwd`'/\1">?' jshint-output.xml > jshint-proper.xml
+sed -E 's?<file name="(.*)\?">?<file name="'`pwd`'/\1">?' report/jshint-output.xml > report/jshint-proper.xml
 END=$(date +%s)
 DIFF=$(( $END - $START ))
 echo "Compilation took $DIFF seconds"
