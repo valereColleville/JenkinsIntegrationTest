@@ -49,25 +49,26 @@ module.exports = function(grunt) {
       }
     }
 	},
+	phantom : {
+		options: {
+			port:9515
+		},
+		test:{}		
+	},
 	protractor: {
     options: {
-      configFile: "node_modules/protractor/referenceConf.js", // Default config file
+      configFile: "protractorConfigFile.js", // Default config file
       keepAlive: true, // If false, the grunt process stops when the test fails.
       noColor: false, // If true, protractor will not use colors in its output.
     },
- 	test: {
-      options: {
-        configFile: "protractorConfigFile.js",
-        args: {} // Target-specific arguments
-      }
-    }
+ 	test: {}
   },
 	connect: {
 		options: {
 		     port: 9000,
 		     base: '<%= variables.dist %>'
 		 },
-	  	serverTest: {
+	  	test: {
 		 options: {
 		     base: '<%= variables.test %>'
 		   }
@@ -91,10 +92,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-phantom');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint', 'clean']);
   grunt.registerTask('dev', ['jshint', 'clean', 'concat', 'uglify', 'compass:dev', 'copy']);
-  grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify', 'compass:dist', 'copy','connect:serverTest', 'protractor:test']);
+  grunt.registerTask('jenkins', ['jshint', 'clean', 'concat', 'uglify', 'compass:dist', 'copy','connect:test', 'phantom:test', 'protractor:test']);
+	grunt.registerTask('test',['connect:test','phantom:test','protractor:test']);
 
 };

@@ -1,22 +1,18 @@
 require('jasmine-reporters');
+jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(
+    'report/', true, true));
 
 exports.config = {
-  seleniumServerJar: 'selenium/selenium-server-standalone-2.39.0.jar',
-  seleniumPort: 4444,
-  chromeDriver: 'selenium/chromedriver',
-  seleniumArgs: [],
+  seleniumAddress: 'http://localhost:9515',
   specs: [
     'test/*_spec.js'
   ],
   capabilities: {
     'browserName': 'phantomjs'
   },
-  allScriptsTimeout: 50000,
   baseUrl: 'http://localhost:9000/',
   rootElement: 'body',
   onPrepare: function() {
-	jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(
-    'outputdir/', true, true));
     var ptor = protractor.getInstance();
     ptor.elem = ptor.findElement;
     ptor.elems = ptor.findElements;

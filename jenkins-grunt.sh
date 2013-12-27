@@ -6,8 +6,7 @@ node --version
 
 npm install grunt-cli
 npm install 
-./node_modules/protractor/bin/webdriver-manager update --out_dir selenium
-mv ./fix/protractor.js ./node_modules/protractor/lib/protractor.js
+cp ./fix/protractor.js ./node_modules/protractor/lib/protractor.js
 ./node_modules/grunt-cli/bin/grunt jenkins --no-color
 sed -E 's?<file name="(.*)\?">?<file name="'`pwd`'/\1">?' report/jshint-output.xml > report/jshint-proper.xml
 END=$(date +%s)
