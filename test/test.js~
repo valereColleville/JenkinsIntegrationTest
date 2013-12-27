@@ -1,11 +1,9 @@
-ptor.waitForAngular();
-
 var AngularHomepage = function() {
   this.nameInput = element(by.model('yourName'));
   this.greeting = element(by.binding('yourName'));
 
   this.get = function() {
-    browser.get('http://www.angularjs.org');
+    browser.get('http://localhost:9000/');
   };
 
   this.setName = function(name) {
