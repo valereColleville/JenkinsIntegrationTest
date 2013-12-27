@@ -1,5 +1,3 @@
-ptor.waitForAngular();
-
 var AngularHomepage = function() {
   this.nameInput = element(by.model('yourName'));
   this.greeting = element(by.binding('yourName'));
