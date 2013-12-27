@@ -18,6 +18,6 @@ describe('angularjs homepage', function() {
 
     angularHomepage.setName('Julie');
 
-    expect(angularHomepage.greeting.getText()).toEqual('Hello, Julie!');
+    expect(angularHomepage.greeting.getText()).toEqual('Hello Julie!');
   });
 });
