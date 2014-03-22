@@ -6,6 +6,8 @@ before_script:
   - npm install grunt-cli
   - cp "./fix/protractor.js" "./node_modules/protractor/lib/protractor.js"
 script: {
-  test : "test" 
+  connect : "test",
+  phantom : "test",
+  protractor : "test"
 }
   
