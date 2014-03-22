@@ -5,9 +5,4 @@ before_script:
   - npm install --dev
   - npm install grunt-cli
   - cp "./fix/protractor.js" "./node_modules/protractor/lib/protractor.js"
-script: {
-  connect : "test",
-  phantom : "test",
-  protractor : "test"
-}
   
