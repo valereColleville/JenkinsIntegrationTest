@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - '0.10'
-before_script: "npm install --dev"
+before_script: 
+  -npm install --dev
+  -npm install grunt-cli
+  -cp ./fix/protractor.js ./node_modules/protractor/lib/protractor.js
+  
 script: "npm test"
   
