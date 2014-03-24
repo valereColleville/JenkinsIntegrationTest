@@ -20,4 +20,12 @@ describe('angularjs homepage', function() {
 
     expect(angularHomepage.greeting.getText()).toEqual('Hello Julie!');
   });
+  it('should greet the named user 2', function() {
+    var angularHomepage = new AngularHomepage();
+    angularHomepage.get();
+
+    angularHomepage.setName('Julie');
+
+    expect(angularHomepage.greeting.getText()).toEqual('Hello, Julie!');
+  });
 });
